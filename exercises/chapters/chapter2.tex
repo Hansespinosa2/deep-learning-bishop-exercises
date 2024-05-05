@@ -61,3 +61,52 @@ Verifying the laplace distribution:
   = \frac{1}{2} \\ 
   \frac{1}{2} + \frac{1}{2} = 1
 \end{gather}
+
+
+\subsection{Exercise 2.6}
+Not attempted
+
+\subsection{Exercise 2.7}
+
+\begin{gather}
+  P(x|D) = \frac{1}{N}\sum_{n=1}^N \delta(x-x_n) \\
+  E[f] = \int p(x)f(x)dx \\
+  \text{Substituting:} \\
+  E[f] = \int \frac{1}{N}\sum_{n=1}^N \delta(x-x_n) f(x) dx \\
+  E[f] =  \frac{1}{N}\sum_{n=1}^N \int_{x_n- \varepsilon}^{x_n + \varepsilon} \delta(x-x_n) f(x) dx \\
+  E[f] =  \frac{1}{N}\sum_{n=1}^N f(x_n) \int_{x_n- \varepsilon}^{x_n + \varepsilon} \delta(x-x_n) dx \\
+  E[f] =  \frac{1}{N}\sum_{n=1}^N f(x_n)
+\end{gather}
+
+\subsection{Exercise 2.8}
+Not attempted
+
+\subsection{Exercise 2.9}
+
+\begin{equation}
+  cov[X,y] = E_{x,y}[xy] - E[x]E[y] \\
+\end{equation}
+
+If x and y are independent, the joint distribution is equal to the product of the marginals. $p(x,y) = p(x)p(y)$. If $E_{x,y}[xy] = E[x]E[y]$, then the covariance will be zero.
+
+\subsection{Exercise 2.10}
+Not attempted
+
+\subsection{Exercise 2.11}
+Proving $E[x] = E_y[E_x[x|y]]$:
+\begin{gather}
+  E_x[x|y] = \int p(x|y)xdx \\
+  \text{Substituting:} \\
+  E[x] = E_y[\int p(x|y)xdx] \\
+  E[x] = \int E_y[p(x|y)]xdx \\
+  E[x] = \int \int p(x|y)xp(y) dxdy \\
+  E[x] = \int \int \frac{p(x,y)}{p(y)}xp(y) dxdy \\
+  E[x] = \int \int p(x,y)x dxdy \\
+  E[x] = E[x]
+\end{gather}
+
+
+\subsection{Exercise 2.12}
+Not attempted
+
+\subsection{Exercise 2.13}

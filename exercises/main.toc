@@ -3,3 +3,11 @@
 \contentsline {section}{\numberline {2}Probabilities}{3}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Exercise 2.2}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Exercise 2.4}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Exercise 2.6}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Exercise 2.7}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Exercise 2.8}{4}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Exercise 2.9}{4}{subsection.2.6}%
+\contentsline {subsection}{\numberline {2.7}Exercise 2.10}{4}{subsection.2.7}%
+\contentsline {subsection}{\numberline {2.8}Exercise 2.11}{5}{subsection.2.8}%
+\contentsline {subsection}{\numberline {2.9}Exercise 2.12}{5}{subsection.2.9}%
+\contentsline {subsection}{\numberline {2.10}Exercise 2.13}{5}{subsection.2.10}%
