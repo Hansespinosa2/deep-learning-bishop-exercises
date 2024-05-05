@@ -1,6 +1,6 @@
 \section{Probabilities}
 
-\subsection{Exercise 2.1}
+\subsection*{Exercise 2.1}
 Bayes rule
 \begin{gather}
   P[C=1|T=1] = \frac{P[T=1|C=1]*P[C=1]}{P[T=1|C=1]*P[C=1] + P[T=1|C=0]*P[C=0]} \\
@@ -8,3 +8,56 @@ Bayes rule
 \end{gather}
 
 Given that the test result was positive, there is a 2.92\% chance that you have cancer.
+
+\subsection{Exercise 2.2}
+Not attempted
+
+\subsection*{Exercise 2.3}
+\begin{gather}
+  p(\mathbf{y}) = \int p_\mathbf{u},_\mathbf{v}(\mathbf{u},\mathbf{y}-\mathbf{u})d\mathbf{u} \\
+  = \int p_\mathbf{u}(\mathbf{u})p_\mathbf{v}(\mathbf{y} - \mathbf{u})d\mathbf{u}
+\end{gather}
+
+\subsection{Exercise 2.4}
+Not attempted
+
+\subsection*{Exercise 2.5}
+Exponential:
+\begin{equation}
+  p(x|\lambda) = \lambda e^{-\lambda x}
+\end{equation}
+
+Laplace: 
+\begin{equation}
+  p(x|\mu,\gamma) = \frac{1}{2\gamma} e^{-\frac{|x-\mu|}{\gamma}}
+\end{equation}
+
+Verifying that the exponential distribution is normalized: 
+
+\begin{gather}
+  p(x|\lambda) = \lambda e^{-\lambda x} \\
+  \int_{0}^{\infty} \lambda e^{-\lambda x} = -e^{-\lambda x} \Big |_0^\infty = \frac{1}{e^\infty} + \frac{1}{e^0} \\
+ = 1
+\end{gather}
+
+Verifying the laplace distribution:
+
+\begin{equation}
+  p(x|\mu,\gamma) = \frac{1}{2\gamma} e^{-\frac{|x-\mu|}{\gamma}} \\
+\end{equation}
+
+
+\begin{equation}
+  \begin{cases}
+    \frac{1}{2\gamma} e^{-\frac{x-\mu}{\gamma}} & \text{if } x \geq \mu \\
+    \frac{1}{2\gamma} e^{-\frac{-x+\mu}{\gamma}} & \text{if } x < \mu
+  \end{cases}
+\end{equation}
+
+\begin{gather}
+  \int_{\mu}^{\infty}\frac{1}{2\gamma} e^{-\frac{x-\mu}{\gamma}} = \frac{1}{2} e^{-\frac{x-\mu}{\gamma}} \Big |_\mu^\infty = -\frac{1}{2}(e^{-\infty} - e^0) \\
+  = \frac{1}{2} \\
+  \int_{-\infty}^{\mu}\frac{1}{2\gamma} e^{-\frac{-x+\mu}{\gamma}} = \frac{1}{2} e^{-\frac{-x+\mu}{\gamma}} \Big |_{-\infty}^\mu = \frac{1}{2}(e^{0} - e^{-\infty}) \\
+  = \frac{1}{2} \\ 
+  \frac{1}{2} + \frac{1}{2} = 1
+\end{gather}
