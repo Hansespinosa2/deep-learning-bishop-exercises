@@ -1,0 +1,552 @@
+%== Setup  =================================================
+
+\usepackage[margin=1in,headheight=14in]{geometry} % See geometry.pdf to learn the layout options.
+\usepackage[T1]{fontenc} % accents are treated correctly (default is OT1, which prevents certain accented letters from being hyphenated correctly, prevents copy-pasting of words with certain accents from the pdf, and other unexpected behaviors)
+\usepackage[utf8]{inputenc} % accept unicode source
+
+%% Here, we use the fancyhdr and lastpage packages to customize the header and footer of each page
+% \usepackage{lastpage}
+% %% Set header
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \fancyhead[L]{\small \courseyear{} \coursenumber{}: \documentname{}}
+% \fancyhead[R]{\small \lastname{} \thepage}
+% \fancyfoot[C]{}
+% \renewcommand{\headrulewidth}{0.4pt}
+
+%== Formatting  =============================================
+
+\usepackage{lmodern}
+
+%% Fix bugs with lmodern with nonstandard font sizes
+\DeclareFontShape{OMX}{cmex}{m}{n}{ % declare `cmex` to be arbitrary scalable
+  <-7.5> cmex7
+  <7.5-8.5> cmex8
+  <8.5-9.5> cmex9
+  <9.5-> cmex10%
+}{}
+\DeclareSymbolFont{largesymbols}{OMX}{cmex}{m}{n} % fix for superscripted accents being too high
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\usepackage[usenames,dvipsnames,table]{xcolor} % needs to be loaded before fancyhdr
+
+\newcommand{\smallplus}{\raisebox{0.5ex}{\tiny\textbf{+}}}
+\newcommand{\smallminus}{\raisebox{0.5ex}{\tiny\textbf{--}}}
+
+\usepackage{siunitx}
+\sisetup{%
+    output-decimal-marker={.},
+    group-separator = {,},
+    group-minimum-digits = 4,
+}
+
+\usepackage{csquotes} % displayquote environment
+\usepackage{pdfpages} % includepdf
+
+\newcommand{\latin}[1]{#1}
+
+%== Graphics  ==============================================
+
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+% other packages Ryan sometimes uses...
+%\usepackage{xspace,float,mathdots}
+\usepackage[tableposition=top]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+
+
+%== Lists & Tables  =================================================
+
+\usepackage{arydshln} % dashed lines
+\usepackage{makecell} % breakline within cell
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{calc} % for widthof
+\usepackage[shortlabels,inline]{enumitem} % inline enables enumerate* environment
+
+% after enumitem
+\newlist{questions}{enumerate}{1}
+\setlist[questions]{\bfseries{\small Question} 1, leftmargin=0cm, labelindent=0cm, itemindent=0em, align=right, start=1}
+\newlist{subquestions}{enumerate}{1}
+\setlist[subquestions]{(a),labelindent=0cm,itemindent=0em,leftmargin=*,align=left,labelwidth=\widthof{(w)}}
+
+\newlist{qanda}{enumerate}{1}
+\setlist[qanda]{\bfseries{\hwnum.}1, leftmargin=0cm, labelindent=0cm, itemindent=0em, align=right, start=1}
+\newcommand{\question}[1]{\begin{qanda}[resume] \item {#1} \end{qanda}}
+\newcommand{\attribution}[1]{\noindent Attribution: #1}
+
+\usepackage{mdframed}
+\newif\ifshowsolutions
+\showsolutionstrue
+\newcommand{\answer}[1]{%
+  \ifshowsolutions
+  \begin{mdframed}[innerleftmargin=\fboxsep,innerrightmargin=\fboxsep,innertopmargin=\fboxsep,innerbottommargin=\fboxsep]
+    \textbf{Solution:} #1
+  \end{mdframed}
+  \fi
+}
+
+\newcommand{\solution}[1]{\answer{#1}}
+\newcommand{\hint}[1]{\noindent {\small \textbf{Hint:} #1}}
+\newcommand{\instructions}[1]{\paragraph{Instructions.}{\itshape #1}}
+\newcommand{\emptybox}{$\square$}
+\newcommand{\checkbox}{
+  \ifshowsolutions
+    \mbox{\mathsurround=0pt \makebox[0pt][l]{{\color{blue}$\checkmark$}}\emptybox}
+  \else
+    \emptybox
+  \fi
+}
+%\newcommand{\answer}[1]{\noindent\attribution{#1}\mbox{}\\}
+%\newcommand{\answer}[1]{#1}
+%   \begin{qanda}[resume]
+%     \item[] #1
+%   \end{qanda}
+%}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{H}{>{\setbox0=\hbox\bgroup}c<{\egroup}@{}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+
+%== Math  ==================================================
+
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+% For convenience
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\tbf}[1]{\textbf{#1}}
+\newcommand{\tit}[1]{\textit{#1}}
+\newcommand{\ttt}[1]{\texttt{#1}}
+
+\usepackage[normalem]{ulem}
+\newcommand{\tul}[1]{\uline{#1}}
+
+\newcommand{\tulbf}[1]{\uline{\tbf{#1}}}
+%% Adhere to standards and such
+\let\tt\ttfamily
+
+%\usepackage{mathtools}
+%\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\bigabs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\card}[1]{\lvert #1 \rvert}
+\newcommand{\cardinality}[1]{\lvert #1 \rvert}
+\newcommand{\norm}[1]{\lVert #1 \rVert}
+\newcommand{\bignorm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\innerprod}[1]{\langle #1 \rangle}
+\newcommand*\bigcdot{\mathpalette\bigcdot@{.5}}
+%\newcommand*\bigcdot@[2]{\mathbin{\vcenter{\hbox{\scalebox{#2}{$\m@th#1\bullet$}}}}}
+\newcommand{\bigmid}{\,\middle|\,}
+
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+
+% probability
+\renewcommand{\Pr}{\mathop{\bfseries Pr\/}}
+\newcommand{\E}{\mathop{\bfseries E\/}}
+\newcommand{\Ex}{\mathop{\bfseries E\/}}
+\newcommand{\Var}{\mathop{\bfseries Var\/}}
+\newcommand{\Cov}{\mathop{\bfseries Cov\/}}
+\newcommand{\stddev}{\mathop{\bfseries stddev\/}}
+
+\newcommand{\complexity}[1]{$\mathcal{#1}$}
+\DeclareMathOperator{\bigO}{\mathcal{O}} % big O(micron)
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\sgn}{sgn}
+\DeclareMathOperator*{\conv}{conv}
+\DeclareMathOperator*{\cone}{cone}
+\DeclareMathOperator*{\rec}{rec}
+\DeclareMathOperator*{\interior}{int}
+\DeclareMathOperator*{\relint}{relint}
+\DeclareMathOperator*{\relbd}{relbd}
+\DeclareMathOperator*{\bd}{bd}
+\DeclareMathOperator*{\cl}{cl}
+\DeclareMathOperator*{\proj}{proj}
+\DeclareMathOperator*{\cspan}{span}
+\DeclareMathOperator*{\rspan}{rowspan}
+\DeclareMathOperator*{\rank}{rank}
+% \DeclareMathOperator*{\ker}{ker}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator*{\support}{supp}
+
+% number systems
+\usepackage{bbm}
+\newcommand{\field}[1]{\mathbbm{#1}}
+\newcommand{\reals}{\field{R}}
+\newcommand{\integers}{\field{Z}}
+\newcommand{\rationals}{\field{Q}}
+\newcommand{\nonnegreals}{\reals_{\scriptscriptstyle \ge 0}}
+\newcommand{\nonnegints}{\integers_{\scriptscriptstyle \ge 0}}
+\newcommand{\nonnegintegers}{\nonnegints}
+\newcommand{\nonnegrationals}{\rationals_{\scriptscriptstyle \ge 0}}
+\newcommand{\posreals}{\reals_{\scriptscriptstyle > 0}}
+\newcommand{\posints}{\integers_{\scriptscriptstyle > 0}}
+\newcommand{\posintegers}{\posints}
+\newcommand{\posrationals}{\rationals_{\scriptscriptstyle > 0}}
+\newcommand{\R}{\reals}
+\newcommand{\Rplus}{\nonnegreals}
+\newcommand{\Rplusplus}{\posreals}
+\newcommand{\C}{\field{C}}
+\newcommand{\N}{\field{N}}
+\newcommand{\Z}{\integers}
+\newcommand{\Zplus}{\nonnegintegers}
+\newcommand{\Zplusplus}{\posintegers}
+\newcommand{\F}{\field{F}}
+\newcommand{\Q}{\rationals}
+
+\newcommand{\psdcone}[1]{\mathcal{S}_+^{#1}}
+
+% \newcommand\T{{\mathpalette\raiseT\intercal}} % custom transpose operator
+% \newcommand\raiseT[2]{\raisebox{0.25ex}{$#1#2$}}
+\newcommand{\T}{\mathsf{\scriptscriptstyle T}} % custom transpose operator
+\newcommand{\phT}{{\vphantom{\T}}} % vphantom to adjust subscript due to transpose operator
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+                     \hbox{\footnotesize.}\hbox{\footnotesize.}}}%
+                     =}
+\newcommand*{\eqdef}{=\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+                     \hbox{\footnotesize.}\hbox{\footnotesize.}}}}
+\newcommand{\suchthat}{: }
+\newcommand{\given}{\nonscript\;\middle|\nonscript\;}
+\newcommand{\Iff}{if\textcompwordmark f\xspace} % if and only iff
+
+\newcommand{\indicator}[1]{\mathbbm{1}\{ #1 \}}
+
+%== Citations  ==============================================
+
+% \usepackage[numbers]{natbib}
+% \usepackage[authoryear,round]{natbib}
+\usepackage[
+  hyperref=true,
+  natbib=true,
+%  sortcites,
+  giveninits=true,
+  backend=biber,
+%  bibstyle=ieee,
+  %style=numeric,
+  isbn=false,url=false,doi=false,
+  mincitenames=1,
+  maxcitenames=2,
+  uniquelist=false,
+%  maxnames=10,
+  maxbibnames=99]{biblatex}
+  
+% Custom command to cite author, "title", year
+%\DeclareCiteCommand{⟨command⟩}[⟨wrapper⟩]{⟨precode⟩}{⟨loopcode⟩}{⟨sepcode⟩}{⟨postcode⟩}
+\DeclareCiteCommand{\inlinecite}
+    % precode (commands must follow "{" immediately or else a space will appear)
+    {\boolfalse{citetracker}%
+        \boolfalse{pagetracker}%
+        \usebibmacro{prenote}%
+    }
+    {% loopcode
+        \ifciteindex
+         {\indexnames{labelname}%
+          \indexfield{indextitle}}
+         {}%
+       \printnames{labelname}%
+       \renewcommand*{\labelnamepunct}{\addcomma\space}%
+       \setunit{\labelnamepunct}%
+       \printfield[citetitle]{labeltitle}%
+       %\newunit
+       \labelnamepunct
+       \printfield{year}
+       [\usebibmacro{cite}]
+    }{% sepcode
+        \multicitedelim
+    }{% postcode
+        \usebibmacro{postnote}
+    }
+  
+\renewbibmacro{in:}{}
+\DeclareFieldFormat{pages}{#1} % no prefix for the `pages` field in the bibliography
+\DeclareFieldFormat[techreport,report,unpublished,misc]{title}{\mkbibquote{#1}} % titles of working papers should be in quotes
+% Adjust title case as needed, but NB this affects journal titles and language and other things to be careful about, hence the subsequent adjustment. I wanted consistency, but the bib style should really enforce this. Note that when capitalization is enforced in the bib file with braces, the _entire_ word should be wrapped in braces, not just the one letter of each word that needs to be capitalized, as that affects kerning
+%\DeclareFieldFormat{titlecase}{#1}
+\DeclareFieldFormat{titlecase}{\MakeSentenceCase*{#1}} 
+\renewbibmacro*{journal}{%
+  \iffieldundef{journaltitle}
+    {}
+    {\printtext[journaltitle]{%
+       \printfield[noformat]{journaltitle}%
+       \setunit{\subtitlepunct}%
+       \printfield[noformat]{journalsubtitle}}}}
+\renewbibmacro*{booktitle}{%
+  \iffieldundef{booktitle}
+    {}
+    {\printtext[booktitle]{%
+       \printfield[noformat]{booktitle}%
+       \setunit{\subtitlepunct}%
+       \printfield[noformat]{booksubtitle}}}}
+\DefineBibliographyStrings{english}{phdthesis = {Ph\adddot D\adddotspace Dissertation}}
+
+%% Added 2019-08-29
+%\DeclareFieldFormat{date}{#1}
+%\renewbibmacro*{issue+date}{%
+%  \setunit{\addperiod\space}% NEW
+%%  \printtext[parens]{% DELETED
+%    \iffieldundef{issue}
+%      {\usebibmacro{date}}
+%      {\printfield{issue}%
+%       \setunit*{\addspace}%
+%%       \usebibmacro{date}}}% DELETED
+%       \usebibmacro{pages}%
+%       \usebibmacro{date}%
+%       }% NEW
+%  \newunit}
+
+%\renewbibmacro*{journal+issuetitle}{%
+%  \usebibmacro{journal}%
+%  \setunit*{\addspace}%
+%  \iffieldundef{series}
+%    {}
+%    {\newunit
+%     \printfield{series}%
+%     \setunit{\addspace}}%
+%  \usebibmacro{volume+number+eid}% 
+%  \setunit{\addcomma\space}%
+%  \usebibmacro{issue}%
+%  \setunit{\addcolon\space}%
+%  \usebibmacro{issue+date}%
+%  \newunit}
+  \renewbibmacro*{journal+issuetitle}{%
+  \usebibmacro{journal}%
+  \setunit*{\addspace}%
+  \iffieldundef{series}
+    {}
+    {\newunit
+     \printfield{series}%
+     \setunit{\addspace}}%
+  \usebibmacro{volume+number+eid}%
+  \setunit{\bibpagespunct}%
+  \printfield{pages}%
+  \setunit{\addspace}%
+  \usebibmacro{issue+date}%
+  \setunit{\addcolon\space}%
+  \usebibmacro{issue}%
+  \newunit}
+\renewbibmacro*{note+pages}{%
+  \printfield{note}%
+  \newunit}
+%  \renewbibmacro*{journal+issuetitle}{%
+%    \usebibmacro{journal}%
+%    \setunit*{\addspace}%
+%    \iffieldundef{series}
+%    {}
+%    {\newunit
+%        \printfield{series}%
+%        \setunit{\addspace}}%
+%    \printfield{volume}%
+%    \setunit{\addcomma\space}%
+%    \printfield{pages}%
+%    \setunit{\space (}%
+%    \usebibmacro{date})%
+%    \newunit}
+
+\renewbibmacro*{issue+date}{%
+  \setunit{\addcomma\space}% NEW
+%  \printtext[parens]{% DELETED
+    \iffieldundef{issue}
+      {\usebibmacro{date}}
+      {\printfield{issue}%
+       \setunit*{\addspace}%
+%       \usebibmacro{date}}}% DELETED
+       \usebibmacro{date}}% NEW
+  \newunit}
+  
+\usepackage{xpatch}
+\xpatchbibdriver{incollection}
+  {\usebibmacro{byeditor+others}}
+  {\nopunct\usebibmacro{byeditor+others}}
+  {}{\typeout{failed to patch bibmacro incollection to remove punctuation before byeditors}}
+
+\xpatchbibdriver{incollection}
+  {\newunit\newblock
+   \usebibmacro{chapter+pages}}
+  {}
+  {}{\typeout{failed to patch bibmacro incollection to remove page macro}}
+
+\xpatchbibdriver{incollection}
+  {\usebibmacro{series+number}}
+  {\usebibmacro{series+number}
+   \newunit\newblock
+   \usebibmacro{chapter+pages}}
+  {}{\typeout{failed to patch bibmacro incollection to re-add page macro}}
+
+
+%== Hyperref  ==============================================
+
+\usepackage{nameref}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage[plainpages=false,colorlinks=true,allcolors=blue]{hyperref} % allows for hyperlinked referencing and citing
+\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+
+%\usepackage{cleveref} 
+\usepackage[nameinlink]{cleveref} % include AFTER hyperref
+\crefname{assumption}{Assumption}{Assumptions}
+\crefname{lemma}{Lemma}{Lemmas}
+\crefname{theorem}{Theorem}{Theorems}
+\crefname{corollary}{Corollary}{Corollaries}
+\crefname{proposition}{Proposition}{Propositions}
+\crefname{claim}{Claim}{Claims}
+\crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{definition}{Definition}{Definitions}
+\crefname{remark}{Remark}{Remarks}
+\crefname{example}{Example}{Examples}
+\crefname{figure}{Figure}{Figures}
+\crefname{section}{Section}{Sections}
+\crefname{table}{Table}{Tables}
+\crefname{line}{Step}{Steps}
+\crefname{equation}{}{}
+\newcommand{\crefrangeconjunction}{--}
+
+
+%== Tikz  ==================================================
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{math} % \tikzmath
+\usetikzlibrary{intersections} % intersection of two lines
+\usepackage{ifthen}
+\usetikzlibrary{arrows, shapes, backgrounds}
+\usetikzlibrary{decorations.pathmorphing, patterns} % decorations supersedes snakes
+\usetikzlibrary{graphs, positioning, fit, quotes}
+  
+%% For drawing polyhedra
+\tikzset{axis/.style = {->,line width = 0.5pt}}
+\tikzset{polyhedron_edge/.style = {line width=1pt, orange!50!black}}
+\tikzset{polyhedron_fill/.style = {fill=gray!30, draw=none, opacity=0.5}}
+\tikzset{polyhedron_edge_bg/.style = {polyhedron_edge, dashed}}
+\tikzset{polyhedron_edge_cut/.style = {polyhedron_edge, dotted}}
+\tikzset{bdS_edge/.style = {fill=none, color=green!80!black, line width=1pt}}
+\tikzset{bdS_fill/.style = {pattern=north west lines, pattern color=green!80!black}}
+\tikzset{cut_edge/.style = {line width = 2pt, red}}
+\tikzset{cut_fill/.style = {pattern=crosshatch, pattern color=red!80!black}}
+\tikzset{ray/.style = {->,>= stealth,shorten >=2pt,line width=1pt}}
+\tikzset{point/.style = {circle, inner sep=1pt, fill=black}}
+\tikzset{lpopt/.style = {point, fill=orange!50!black}}
+\tikzset{ipopt/.style = {point, fill=green!50!black}}
+\tikzset{lattice_point/.style = {rectangle, inner sep=1.5pt, fill=black}}
+\tikzset{intersection_point/.style = {rectangle, inner sep=2.5pt, fill=none, line width = 0.75pt}}
+\tikzset{selected/.style = {rectangle, inner sep=2.5pt, fill=none, line width = 0.75pt}}
+%\tikzset{intersection_point/.style = {point,fill=white}}
+\tikzset{bdS_edge/.style = {fill=none, color=green!80!black, line width=1pt}}
+\tikzset{bdS_fill/.style = {pattern=north west lines, pattern color=green!80!black}}
+\tikzset{cgs/.style = {fill opacity=0.5,fill=none, color=green!80!black, line width=1pt}}
+\tikzset{disj_edge/.style = {fill=none, color=green!80!black, line width=1pt}}
+\tikzset{disj_fill/.style = {pattern=north west lines, pattern color=green!80!black}}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+
+%% For fancy cuts
+\tikzset{cut arrow/.style=
+  {->,
+  decorate,
+  decoration={snake,amplitude=.4mm,segment length=2mm,post length=0mm}},
+  }
+\tikzset{cut line/.style=
+  {-, red, line width=2pt,
+  decorate,
+  decoration={snake,amplitude=.4mm,segment length=2mm,post length=0mm}},
+  }
+ 
+\newcommand{\xangle}{-20}
+\newcommand{\yangle}{45}
+\newcommand{\zangle}{90}
+
+\newcommand{\xlength}{1}
+\newcommand{\ylength}{1}
+\newcommand{\zlength}{1}
+
+\pgfmathsetmacro{\xx}{\xlength*cos(\xangle)}
+\pgfmathsetmacro{\xy}{\xlength*sin(\xangle)}
+\pgfmathsetmacro{\yx}{\ylength*cos(\yangle)}
+\pgfmathsetmacro{\yy}{\ylength*sin(\yangle)}
+\pgfmathsetmacro{\zx}{\zlength*cos(\zangle)}
+\pgfmathsetmacro{\zy}{\zlength*sin(\zangle)}
+
+\newcommand{\xX}{\xx}
+\newcommand{\xY}{\xy}
+\newcommand{\yX}{\yx}
+\newcommand{\yY}{\yy}
+\newcommand{\zX}{\zx}
+\newcommand{\zY}{\zy}
+
+
+%== Theorems  ==================================================
+
+  \newtheorem{theorem}{Theorem}
+  \newtheorem*{theorem*}{Theorem}
+  
+  %% Everything below will be numbered sequentially
+  \newtheorem{corollary}[theorem]{Corollary}
+  \newtheorem{lemma}[theorem]{Lemma}
+  \newtheorem{proposition}[theorem]{Proposition}
+  \newtheorem{claim}[theorem]{Claim}
+  \newtheorem{remark}[theorem]{Remark}
+  \newtheorem{observation}[theorem]{Observation}
+  \newtheorem{conjecture}[theorem]{Conjecture}
+  
+  \newtheorem{thm}[theorem]{Theorem}
+  \newtheorem{cor}[theorem]{Corollary}
+  \newtheorem{lem}[theorem]{Lemma}
+  \newtheorem{prop}[theorem]{Proposition}
+  \newtheorem{rem}[theorem]{Remark}
+  \newtheorem{obs}[theorem]{Observation}
+  \newtheorem{conj}[theorem]{Conjecture}
+  
+  %\newtheoremstyle{claimthm}
+  %  {\topsep}% Space above
+  %  {\topsep}% Space below
+  %  {\itshape}% Body font
+  %  {}% Indent amount
+  %  {\itshape}% Theorem head font
+  %  {.}% Punctuation after theorem head
+  %  {.5em}% Space after theorem head
+  %  {}% Theorem head spec (can be left empty, meaning `normal')
+  %\theoremstyle{claimthm}
+  \theoremstyle{remark}
+  \newtheorem{subclaim}[theorem]{Claim}
+  \newtheorem*{subclaim*}{Claim}
+  
+  
+  %\newtheoremstyle{examplethm}
+  %  {\topsep}% Space above
+  %  {\topsep}% Space below
+  %  {\normalfont}% Body font
+  %  {}% Indent amount
+  %  {\bfseries}% Theorem head font
+  %  {.}% Punctuation after theorem head
+  %  {.5em}% Space after theorem head
+  %  {}% Theorem head spec (can be left empty, meaning `normal')
+  %\theoremstyle{examplethm}
+  \theoremstyle{definition}
+  \newtheorem{assumption}[theorem]{Assumption}
+  \newtheorem{definition}[theorem]{Definition}
+  \newtheorem*{definition*}{Definition}
+  \newtheorem{example}{Example}
+  \newtheorem*{example*}{Example}
+  \newtheorem{defn}[theorem]{Definition}
+  
+
+%== Comments  ==================================================
+
+% For ``commenting out'' chunks of text
+\usepackage{soul}
+\soulregister\cite7
+\soulregister\ref7
+\soulregister\pageref7
+\newcommand{\ignore}[1]{}
+%\newcommand{\comment}[1]{{\color{red} \ul{#1}}}
+\newcommand{\alert}[1]{{\color{red} \ul{#1}}}
+\newcommand{\error}[1]{{\color{red} \ul{#1}}}
+
+% It can be useful to define a custom comment command for each author
+% The commenting functionality on Overleaf is a better system,
+% but the comments do not follow the document if it gets downloaded
+\newcommand{\amk}[1]{{\color{orange} \textsf{[amk:} {\slshape{#1}}\textsf{]}}}
