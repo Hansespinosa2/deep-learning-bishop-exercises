@@ -516,10 +516,10 @@ INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\lmsy10.tf
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-OUTPUT main.toc
-INPUT .\chapters\chapter1.tex
 INPUT C:\Users\hanse\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-ec.enc
+OUTPUT main.toc
+INPUT .\chapters\chapter1.tex
 OUTPUT chapters\chapter1.aux
 INPUT .\chapters\chapter1.tex
 INPUT .\chapters\chapter1.tex
@@ -551,6 +551,10 @@ INPUT main.run.xml
 OUTPUT main.run.xml
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\latxfont\lcircle1.pfb
+INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\latxfont\lcircle1.pfb
+INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\latxfont\line10.pfb
+INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\latxfont\line10.pfb
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx12.pfb
@@ -579,3 +583,5 @@ INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy6.p
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy6.pfb
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy8.pfb
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy8.pfb
+INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
+INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb

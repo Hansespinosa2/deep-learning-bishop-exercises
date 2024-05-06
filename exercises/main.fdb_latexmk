@@ -1,11 +1,11 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1714947372.0873 -1
-  "main.bcf" 1714947371 107996 2ad4cfcf6ccb2017344ad685711f308a "pdflatex"
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1714956109.34777 -1
+  "main.bcf" 1714956108 107996 2ad4cfcf6ccb2017344ad685711f308a "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1714947367.95327 "c:/Users/hanse/OneDrive - University of Florida/Desktop/DesktopRepo/deep-learning-bishop-exercises/exercises/main.tex" "main.pdf" "main" 1714947372.08861 0
+["pdflatex"] 1714956105.06708 "c:/Users/hanse/OneDrive - University of Florida/Desktop/DesktopRepo/deep-learning-bishop-exercises/exercises/main.tex" "main.pdf" "main" 1714956109.34889 0
   "C:/Users/hanse/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1714710060 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/hanse/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1714548301 24236046 ce77420a77f69bee6c86dfdb9885faf7 ""
   "C:/Users/hanse/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -45,6 +45,9 @@
   "C:/Users/hanse/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/rm-lmr6.tfm" 1256929440 11836 e3b6ce3e601aec94f64a536e7f4224d5 ""
   "C:/Users/hanse/AppData/Local/Programs/MiKTeX/fonts/tfm/public/lm/rm-lmr8.tfm" 1256929440 11864 309fd7f43e4a0ba39f6f7644d76e8edf ""
   "C:/Users/hanse/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1247596667 30251 6afa5cb1d0204815a708a080681d4674 ""
+  "C:/Users/hanse/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb" 1247596653 10594 310261a6407d360eda1ed257d05cd4df ""
+  "C:/Users/hanse/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb" 1247596653 11493 4f5ed183a47d3197cf8cd322325db6de ""
+  "C:/Users/hanse/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1247596673 31764 459c573c03a4949a528c2cc7f557e217 ""
   "C:/Users/hanse/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb" 1256929440 121021 836464b5fe0c782d94085eb083550ccc ""
   "C:/Users/hanse/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb" 1256929440 116908 9a7a12d1e4df280ea0ab4aad83cdef88 ""
   "C:/Users/hanse/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb" 1256929440 125241 791aeb35ceacc2764a175b32709cc6a9 ""
@@ -284,17 +287,17 @@
   "C:/Users/hanse/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1695383086 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "C:/Users/hanse/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
   "c:/Users/hanse/OneDrive - University of Florida/Desktop/DesktopRepo/deep-learning-bishop-exercises/exercises/main.tex" 1714938932 484 55f7c84c1ea7a447aed71e1df6739210 ""
-  "chapters/chapter1.aux" 1714947371 4591 e9c5684d609267c90e751e3c4f2b7581 "pdflatex"
+  "chapters/chapter1.aux" 1714956108 4591 6f2087e515a4f2d966c274050935ee60 "pdflatex"
   "chapters/chapter1.tex" 1714938872 69 4c91343bb9dc92bd6fb110029e47a4e3 ""
-  "chapters/chapter2.aux" 1714947371 5656 0ca97a7bf57ea84269c2ccc6d23dbee1 "pdflatex"
-  "chapters/chapter2.tex" 1714947366 3304 f32e76d11d32a668286cd6aecb2d7a35 ""
+  "chapters/chapter2.aux" 1714956108 9085 e1a4f16b31ca3acd915739fc298abcf1 "pdflatex"
+  "chapters/chapter2.tex" 1714956103 7971 6cca0f1ff422f7a03cfe3a4432de27a6 ""
   "include/akazachk.sty" 1714938773 19896 4e3fad85a3831ceb682857ad2572f56e ""
-  "main.aux" 1714947371 412 fb1024821da2ebb956cc6675b7e81866 "pdflatex"
+  "main.aux" 1714956108 413 9993f49bf8829d31d63af751e215336a "pdflatex"
   "main.bbl" 1714938811 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
-  "main.out" 1714947371 1645 a5b4c7b9a2e600c1daf0e95f94331a2e "pdflatex"
-  "main.run.xml" 1714947371 2258 a91c127ad539d8c56e10e28939cf8079 "pdflatex"
+  "main.out" 1714956108 5201 183ae2d2784a42ee3c140251912ce0e7 "pdflatex"
+  "main.run.xml" 1714956108 2258 a91c127ad539d8c56e10e28939cf8079 "pdflatex"
   "main.tex" 1714938932 484 55f7c84c1ea7a447aed71e1df6739210 ""
-  "main.toc" 1714947371 1017 3fdab97da68950790f4215fd03163977 "pdflatex"
+  "main.toc" 1714956108 3297 29c9239739fff6881a14491153329b4b "pdflatex"
   (generated)
   "chapters/chapter1.aux"
   "chapters/chapter2.aux"
