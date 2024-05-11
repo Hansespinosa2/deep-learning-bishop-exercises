@@ -441,6 +441,9 @@ INPUT chapters\chapter1.aux
 INPUT .\chapters\chapter2.aux
 INPUT .\chapters\chapter2.aux
 INPUT chapters\chapter2.aux
+INPUT .\chapters\chapter3.aux
+INPUT .\chapters\chapter3.aux
+INPUT chapters\chapter3.aux
 OUTPUT main.aux
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -538,6 +541,11 @@ INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr6.t
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathit.enc
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-rm.enc
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\enc\dvips\lm\lm-mathsy.enc
+INPUT .\chapters\chapter3.tex
+OUTPUT chapters\chapter3.aux
+INPUT .\chapters\chapter3.tex
+INPUT .\chapters\chapter3.tex
+INPUT chapters\chapter3.tex
 INPUT main.aux
 INPUT .\chapters\chapter1.aux
 INPUT .\chapters\chapter1.aux
@@ -545,6 +553,9 @@ INPUT chapters\chapter1.aux
 INPUT .\chapters\chapter2.aux
 INPUT .\chapters\chapter2.aux
 INPUT chapters\chapter2.aux
+INPUT .\chapters\chapter3.aux
+INPUT .\chapters\chapter3.aux
+INPUT chapters\chapter3.aux
 INPUT .\main.out
 INPUT .\main.out
 INPUT main.run.xml
@@ -559,6 +570,8 @@ INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx10.
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx10.pfb
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx12.pfb
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx12.pfb
+INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx6.pfb
+INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx6.pfb
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx8.pfb
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmbx8.pfb
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmmi10.pfb
@@ -585,3 +598,5 @@ INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy8.p
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\lm\lmsy8.pfb
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
 INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msam10.pfb
+INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT C:\Users\hanse\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
