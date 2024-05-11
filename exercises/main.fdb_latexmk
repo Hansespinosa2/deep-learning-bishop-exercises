@@ -1,11 +1,11 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1715400354.06767 -1
-  "main.bcf" 1715400353 107996 2ad4cfcf6ccb2017344ad685711f308a "pdflatex"
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1715400593.35016 -1
+  "main.bcf" 1715400592 107996 2ad4cfcf6ccb2017344ad685711f308a "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1715400348.80076 "c:/Users/hanse/OneDrive - University of Florida/Desktop/DesktopRepo/deep-learning-bishop-exercises/exercises/main.tex" "main.pdf" "main" 1715400354.06905 0
+["pdflatex"] 1715400589.11897 "c:/Users/hanse/OneDrive - University of Florida/Desktop/DesktopRepo/deep-learning-bishop-exercises/exercises/main.tex" "main.pdf" "main" 1715400593.35166 0
   "C:/Users/hanse/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1714710060 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/hanse/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1714548301 24236046 ce77420a77f69bee6c86dfdb9885faf7 ""
   "C:/Users/hanse/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc" 1256929440 2375 baa924870cfb487815765f9094cf3728 ""
@@ -288,24 +288,27 @@
   "C:/Users/hanse/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
   "C:/Users/hanse/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-abspage.sty" 1695383086 2269 4fe6fb3396214c91f164d45faf9bec45 ""
   "C:/Users/hanse/AppData/Local/Programs/MiKTeX/tex/latex/zref/zref-base.sty" 1695383086 20785 f7d1133a287929598a897c93f8f4c44b ""
-  "c:/Users/hanse/OneDrive - University of Florida/Desktop/DesktopRepo/deep-learning-bishop-exercises/exercises/main.tex" 1715375808 519 11a6772830aa77c2fdca3c725ba4cb1a ""
-  "chapters/chapter1.aux" 1715400352 4591 6f2087e515a4f2d966c274050935ee60 "pdflatex"
+  "c:/Users/hanse/OneDrive - University of Florida/Desktop/DesktopRepo/deep-learning-bishop-exercises/exercises/main.tex" 1715400452 554 73a073bf788538d0cc4aaf09b0228de4 ""
+  "chapters/chapter1.aux" 1715400592 4591 bc4b002494dd2f373a73d8da59b6eecd "pdflatex"
   "chapters/chapter1.tex" 1714938872 69 4c91343bb9dc92bd6fb110029e47a4e3 ""
-  "chapters/chapter2.aux" 1715400353 9085 e1a4f16b31ca3acd915739fc298abcf1 "pdflatex"
+  "chapters/chapter2.aux" 1715400592 9094 4e5ff74c46306b12fb91ef729c4296ed "pdflatex"
   "chapters/chapter2.tex" 1714956103 7971 6cca0f1ff422f7a03cfe3a4432de27a6 ""
-  "chapters/chapter3.aux" 1715400353 9119 6c628ba29c7aab0c49105bf7cee012ed "pdflatex"
+  "chapters/chapter3.aux" 1715400592 9119 5b75154c044f869ebe4fd2717f6fdff5 "pdflatex"
   "chapters/chapter3.tex" 1715400342 8613 37dd3e005cb578a970b6492acf87c0b0 ""
+  "chapters/chapter4.aux" 1715400592 5932 0563d764926a5e14c9663011d895cf74 "pdflatex"
+  "chapters/chapter4.tex" 1715400588 580 558c93453dd733d09bb48685c4d0841b ""
   "include/akazachk.sty" 1715377627 19925 58c521b37581a1999c60057034147fca ""
-  "main.aux" 1715400353 444 07e2a4cc5372c1a7f80a04c2f7168910 "pdflatex"
+  "main.aux" 1715400592 475 f2e8e6fe5c0a7b0fc8bf15a6d2b506dd "pdflatex"
   "main.bbl" 1714938811 0 d41d8cd98f00b204e9800998ecf8427e "biber main"
-  "main.out" 1715400353 10130 9145f2b864fbe35f891eb4aefa153efa "pdflatex"
-  "main.run.xml" 1715400353 2258 a91c127ad539d8c56e10e28939cf8079 "pdflatex"
-  "main.tex" 1715375808 519 11a6772830aa77c2fdca3c725ba4cb1a ""
-  "main.toc" 1715400353 6465 b67184898cb21de3d1be3563f99ebb79 "pdflatex"
+  "main.out" 1715400592 11815 b654eb34f5c8fcd5fa584a971b9d7cf7 "pdflatex"
+  "main.run.xml" 1715400592 2258 a91c127ad539d8c56e10e28939cf8079 "pdflatex"
+  "main.tex" 1715400452 554 73a073bf788538d0cc4aaf09b0228de4 ""
+  "main.toc" 1715400592 7521 1e1522e99ecfda8ea6269f7b8ebf3c8f "pdflatex"
   (generated)
   "chapters/chapter1.aux"
   "chapters/chapter2.aux"
   "chapters/chapter3.aux"
+  "chapters/chapter4.aux"
   "main.aux"
   "main.bcf"
   "main.log"
