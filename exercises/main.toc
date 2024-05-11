@@ -77,4 +77,4 @@
 \contentsline {subsection}{\numberline {3.35}Exercise 3.35}{16}{subsection.3.35}%
 \contentsline {subsection}{\numberline {3.36}Exercise 3.36}{16}{subsection.3.36}%
 \contentsline {subsection}{\numberline {3.37}Exercise 3.37}{16}{subsection.3.37}%
-\contentsline {subsection}{\numberline {3.38}Exercise 3.38}{16}{subsection.3.38}%
+\contentsline {subsection}{\numberline {3.38}Exercise 3.38}{17}{subsection.3.38}%

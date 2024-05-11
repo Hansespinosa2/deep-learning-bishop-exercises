@@ -216,7 +216,18 @@ Not attempted
 \subsection{Exercise 3.37}
 Deriving a maximimum likelihood estimator for a histogram-like density model. Space $\mathbf{x}$ is divided into fixed regions with density $p(\mathbf{x}) = h_i \text{ }\forall\text{ } i \text{ regions}$. Volume $i$ is denoted $\Delta_i$. $N$ total observations such that $n_i$ observations are in region $i$.
 \begin{gather}
-  p(x_i) = \frac{n_i}{N\Delta_i}
+  h_i = \frac{n_i}{N\Delta_i} \\
+  \sum_i h_i\Delta_i = 1 \\
+  L = \prod_{i=0}^{K} h_i^{n_i} \\
+  log L = \prod_{i=0}^{K} n_i log h_i \\
+  max \sum_{i=0}^{K} n_i log h_i - \lambda(\sum_i h_i\Delta_i - 1) \\ 
+  0 = \frac{n_i}{h_i} - \lambda\Delta_i \\
+  \frac{n_i}{h_i} = \lambda \Delta_i \\ 
+  h_i = \frac{n_i}{\lambda \Delta_i}\\
+  \text{Plugging into normalization:} \\
+  \sum_i \frac{n_i}{\lambda} = 1  \\
+  \lambda = N \\
+  h_i = \frac{n_i}{N\Delta_i}
 \end{gather}
 
 \subsection{Exercise 3.38}
