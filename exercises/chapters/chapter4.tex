@@ -22,7 +22,36 @@ Not Attempted
 
 
 \subsection{Exercise 4.3}
-Not attempted
+Showing that the $tanh$ function is related to the logistic sigmoid function by $tanh(a) = 2\sigma(2a) -1$
+\begin{equation}
+  tanh(a) = \frac{e^a-e^{-a}}{e^a+e^{-a}}
+\end{equation}
+
+\begin{equation}
+  \sigma(a) = \frac{1}{1+e^{-a}}
+\end{equation}
+
+\begin{gather}
+  \frac{e^a-e^{-a}}{e^a+e^{-a}} +1 = 2\sigma(2a) \\
+  \frac{\frac{e^{2a} -1}{e^a} }{\frac{e^{2a} +1}{e^a}} +1 =2\sigma(2a) \\
+  \frac{e^{2a}-1}{e^{2a}+1} + 1 = 2\sigma(2a) \\
+  \frac{2e^{2a}}{e^{2a}+1} = 2\sigma(2a) \\
+  \sigma(2a) = \frac{e^{2a}}{1+e^{2a}}
+\end{gather}
+
+
+Showing that $w_0 + \sum_{j=1}^{M}w_j\sigma(\frac{x-\mu_j}{s}) $ is a linear combination of $ u_0 + \sum_{j=1}^{M}u_j tanh(\frac{x-\mu_j}{2s})$
+
+Defining $z_j = \frac{x-\mu_j}{s}$
+
+\begin{gather}
+  u_0 + \sum_{j=1}^{M}u_j tanh(\frac{z_j}{2}) \\ 
+  = u_0 + -1 + 2\sum_{j=1}^{M}u_j \sigma(z_j)
+\end{gather}
+
+\begin{equation}
+  y(x,\mathbf{u}) = u_0 -1 -2w_0 + 2y(x,\mathbf{w}) 
+\end{equation}
 
 
 \subsection{Exercise 4.4}
