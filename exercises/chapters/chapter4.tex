@@ -58,31 +58,84 @@ Defining $z_j = \frac{x-\mu_j}{s}$
 Not attempted
 
 \subsection{Exercise 4.5}
+The weighted sum of squares error function could attempt to weigh some data points more than others. This could tie to data-dependent noise variance by weighing the points that are outliers less than other points. The weighted part could also be a way to lower the weight of or completely negate the effect of duplicate data points. A statement could be set up where if a data point was duplicated, the weight will be set to 0.
+
 Finding the solution $\mathbf{w^*}$ that minimizes 
 \begin{equation}
   E_D(\mathbf{w}) = \frac{1}{2}\sum_{n=1}^{N}r_n(t_n - \mathbf{w}^T \mathbf{\phi}(\mathbf{x}_n))^2
 \end{equation}
 
 \begin{gather}
-  \frac{d}{d\mathbf{w}} = 
+  \frac{d}{d\mathbf{w}} = -\sum_{n=1}^N r_n \phi_n (t_n-\mathbf{w}^T \phi_n) \\
+  0 = \sum_{n=1}^{N} r_n \phi_n t_n - r_n \phi_n \mathbf{w}^T \phi_n \\
+  \sum_{n=1}^{N} \mathbf{w}^T \phi_n =\sum_{n=1}^{N} t_n \\
+  \mathbf{w} = (\Phi^T\Phi)^{-1}\Phi^T \mathbf{t}
 \end{gather}
 \subsection{Exercise 4.6}
 Not attempted
 
 \subsection{Exercise 4.7}
-Not attempted
+Finding $\Sigma_{ml}$:
+\begin{equation}
+  p(t|W,\Sigma) = \mathcal{N}(t|y(x,W), \Sigma)
+\end{equation}
+
+\begin{equation}
+  y(x,W) = W^T \phi(x)
+\end{equation}
+
+likelihood function of multivariate target variable $t$ is:
+\begin{gather}
+  ln p(t|y(x,W),\Sigma) = -\frac{ND}{2} ln(2\pi) - \frac{N}{2} ln|\Sigma| - \frac{1}{2} \sum_{n=1}^{N} (t_n - y(x,W))^T\Sigma^{-1} (t_n - y(x,W)) \\
+  = -\frac{ND}{2} ln(2\pi) - \frac{N}{2} ln|\Sigma| - \frac{1}{2} \sum_{n=1}^{N} (t_n - W^T \phi(x))^T\Sigma^{-1} (t_n - W^T \phi(x)) \\
+  \frac{d}{d\Sigma} = -\frac{N}{2|\Sigma|} \frac{d}{d|\Sigma|} + \frac{1}{2}\sum_{n=1}^{N} (t_n - W^T \phi(x))^T\Sigma^{-1} I \Sigma^{-1} (t_n - W^T \phi(x)) \\
+  \frac{N}{2} \Sigma^{-1} = \Sigma^{-1} \frac{1}{2}\sum_{n=1}^{N} (t_n - W^T \phi(x)) (t_n - W^T \phi(x))^T \Sigma^{-1} \\
+  \Sigma = \frac{1}{N}\sum_{n=1}^{N} (t_n - W_{ML}^T \phi(x)) (t_n - W_{ML}^T \phi(x))^T
+\end{gather}
+
+Important notes learned from this exercise: tr scalar = scalar and $X^T y X$ is a scalar for any dimension compatible matrices. Also, tr(ABC) = tr(BCA) = tr(CAB)
 
 \subsection{Exercise 4.8}
 Not attempted
 
 \subsection{Exercise 4.9}
-Not attempted
+Finding $E[L(t,f(x))]$ for multiple target variables where:
+\begin{equation}
+  E[L(t,f(x))] = \int \int ||f(x) - t||^2 p(x,t)dxdt
+\end{equation}
+
+And showing that the function f(x) that minimizes E is given by $E_t[t|x]$
+\begin{gather}
+  E[L(t,f(x))] = \int \int ||f(x) - t||^2 p(x,t)dxdt \\
+  = \int \int ||f(x) -E[t|x] + E[t|x] - t||^2 p(x,t)dxdt \\
+  = \int \int ||f(x) - E[t|x]||^2 + 2(f(x)-E[t|x])(E[t|x]-t) + ||E[t|x] - t||^2 p(x,t)dxdt \\
+  \text{Integrating over t} \\
+  \int ||f(x) - E[t|x]||^2 p(x)dx + \int var(t|x) p(x) dx \\ 
+  \text{Minimizing this gives} \\
+  f(x) = E[t|x]
+\end{gather}
 
 \subsection{Exercise 4.10}
 Not attempted
 
 \subsection{Exercise 4.11}
-Not attempted
+Normalizing
+
+\begin{equation}
+  p(x|\sigma^2, q) = \frac{q}{2(2\sigma^2)^\frac{1}{q} \Gamma(\frac{1}{q})} e^{-\frac{|x|^q}{2\sigma^2}}
+\end{equation}
+
+where
+\begin{equation}
+  \Gamma(x) = \int_{-\infty}^{\infty}u^{x-1}e^{-u}du
+\end{equation}
+
+\begin{gather}
+  \Gamma(\frac{1}{q}) = \int_{-\infty}^{\infty}u^{\frac{1}{q}-1}e^{-u}du \\
+  \Gamma(\frac{1}{q}) = \int_{-\infty}^{\infty}u^{\frac{1}{q}-1}e^{-u}du
+\end{gather}
+
+Not finished
 
 \subsection{Exercise 4.12}
 Not attempted
